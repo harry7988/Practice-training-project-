@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HESSLocalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EHSSData">
+    <Key>
+      <PropertyRef Name="EHSSDataID" />
+    </Key>
+    <Property Name="EHSSDataID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhysicalState" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="HazardTypeCode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="UNNumber" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ExpiringInDays" Type="Int32" />
+    <Property Name="AuthorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EHSSStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AuditorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+    <Property Name="DOTDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EHSSUser" Relationship="Self.FK_EHSSDATA_REFERENCE_EHSSUSER1" FromRole="EHSSData" ToRole="EHSSUser" />
+    <NavigationProperty Name="EHSSUser1" Relationship="Self.FK_EHSSDATA_REFERENCE_EHSSUSER2" FromRole="EHSSData" ToRole="EHSSUser" />
+    <NavigationProperty Name="HazardType" Relationship="Self.FK_EHSSDATA_REFERENCE_HAZARDTY" FromRole="EHSSData" ToRole="HazardType" />
+    <NavigationProperty Name="MSDSData" Relationship="Self.FK_MSDSDATA_REFERENCE_EHSSDATA" FromRole="EHSSData" ToRole="MSDSData" />
+    <NavigationProperty Name="Shipment" Relationship="Self.FK_SHIPMENT_REFERENCE_EHSSDATA" FromRole="EHSSData" ToRole="Shipment" />
+  </EntityType>
+  <EntityType Name="EHSSUser">
+    <Key>
+      <PropertyRef Name="EHSSUserID" />
+    </Key>
+    <Property Name="EHSSUserID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoginName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LoginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserRole" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EHSSData" Relationship="Self.FK_EHSSDATA_REFERENCE_EHSSUSER1" FromRole="EHSSUser" ToRole="EHSSData" />
+    <NavigationProperty Name="EHSSData1" Relationship="Self.FK_EHSSDATA_REFERENCE_EHSSUSER2" FromRole="EHSSUser" ToRole="EHSSData" />
+    <NavigationProperty Name="MSDSData" Relationship="Self.FK_MSDSDATA_REFERENCE_EHSSUSER" FromRole="EHSSUser" ToRole="MSDSData" />
+    <NavigationProperty Name="Shipment" Relationship="Self.FK_SHIPMENT_REFERENCE_EHSSUSER" FromRole="EHSSUser" ToRole="Shipment" />
+  </EntityType>
+  <EntityType Name="HazardType">
+    <Key>
+      <PropertyRef Name="HazardTypeCode" />
+    </Key>
+    <Property Name="HazardTypeCode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HazardTypeDesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HazardSignImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EHSSData" Relationship="Self.FK_EHSSDATA_REFERENCE_HAZARDTY" FromRole="HazardType" ToRole="EHSSData" />
+    <NavigationProperty Name="MSDSDetail" Relationship="Self.FK_MSDSDETA_REFERENCE_HAZARDTY" FromRole="HazardType" ToRole="MSDSDetail" />
+  </EntityType>
+  <EntityType Name="MSDSData">
+    <Key>
+      <PropertyRef Name="EHSSDataID" />
+    </Key>
+    <Property Name="EHSSDataID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmergencyTelephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HazardStatement" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FireStatement" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StorageDisposal" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SpillLeak" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AuditorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+    <Property Name="MSDSStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EHSSData" Relationship="Self.FK_MSDSDATA_REFERENCE_EHSSDATA" FromRole="MSDSData" ToRole="EHSSData" />
+    <NavigationProperty Name="EHSSUser" Relationship="Self.FK_MSDSDATA_REFERENCE_EHSSUSER" FromRole="MSDSData" ToRole="EHSSUser" />
+    <NavigationProperty Name="MSDSDetail" Relationship="Self.FK_MSDSDETA_REFERENCE_MSDSDATA" FromRole="MSDSData" ToRole="MSDSDetail" />
+  </EntityType>
+  <EntityType Name="MSDSDetail">
+    <Key>
+      <PropertyRef Name="Ingredient" />
+    </Key>
+    <Property Name="Ingredient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EHSSDataID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ratio" Type="Decimal" Precision="4" Scale="3" />
+    <Property Name="HazardTypeCode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HazardType" Relationship="Self.FK_MSDSDETA_REFERENCE_HAZARDTY" FromRole="MSDSDetail" ToRole="HazardType" />
+    <NavigationProperty Name="MSDSData" Relationship="Self.FK_MSDSDETA_REFERENCE_MSDSDATA" FromRole="MSDSDetail" ToRole="MSDSData" />
+  </EntityType>
+  <EntityType Name="Shipment">
+    <Key>
+      <PropertyRef Name="ShipmentID" />
+    </Key>
+    <Property Name="ShipmentID" Type="String" MaxLength="17" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EHSSDataID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateInProduced" Type="DateTime" Precision="0" />
+    <Property Name="DateToPull" Type="DateTime" Precision="0" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+    <Property Name="AddressFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShipperTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AddressTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConsigneeTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ShippingType" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="ContainerSize" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NetWeight" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="GrossWeight" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="FreightCharge" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="AuthorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="AuditorID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipmentStatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EHSSData" Relationship="Self.FK_SHIPMENT_REFERENCE_EHSSDATA" FromRole="Shipment" ToRole="EHSSData" />
+    <NavigationProperty Name="EHSSUser" Relationship="Self.FK_SHIPMENT_REFERENCE_EHSSUSER" FromRole="Shipment" ToRole="EHSSUser" />
+  </EntityType>
+  <Association Name="FK_EHSSDATA_REFERENCE_EHSSUSER1">
+    <End Role="EHSSUser" Type="Self.EHSSUser" Multiplicity="1" />
+    <End Role="EHSSData" Type="Self.EHSSData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSUser">
+        <PropertyRef Name="EHSSUserID" />
+      </Principal>
+      <Dependent Role="EHSSData">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EHSSDATA_REFERENCE_EHSSUSER2">
+    <End Role="EHSSUser" Type="Self.EHSSUser" Multiplicity="0..1" />
+    <End Role="EHSSData" Type="Self.EHSSData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSUser">
+        <PropertyRef Name="EHSSUserID" />
+      </Principal>
+      <Dependent Role="EHSSData">
+        <PropertyRef Name="AuditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EHSSDATA_REFERENCE_HAZARDTY">
+    <End Role="HazardType" Type="Self.HazardType" Multiplicity="0..1" />
+    <End Role="EHSSData" Type="Self.EHSSData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HazardType">
+        <PropertyRef Name="HazardTypeCode" />
+      </Principal>
+      <Dependent Role="EHSSData">
+        <PropertyRef Name="HazardTypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSDSDATA_REFERENCE_EHSSDATA">
+    <End Role="EHSSData" Type="Self.EHSSData" Multiplicity="1" />
+    <End Role="MSDSData" Type="Self.MSDSData" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSData">
+        <PropertyRef Name="EHSSDataID" />
+      </Principal>
+      <Dependent Role="MSDSData">
+        <PropertyRef Name="EHSSDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHIPMENT_REFERENCE_EHSSDATA">
+    <End Role="EHSSData" Type="Self.EHSSData" Multiplicity="1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSData">
+        <PropertyRef Name="EHSSDataID" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="EHSSDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSDSDATA_REFERENCE_EHSSUSER">
+    <End Role="EHSSUser" Type="Self.EHSSUser" Multiplicity="1" />
+    <End Role="MSDSData" Type="Self.MSDSData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSUser">
+        <PropertyRef Name="EHSSUserID" />
+      </Principal>
+      <Dependent Role="MSDSData">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHIPMENT_REFERENCE_EHSSUSER">
+    <End Role="EHSSUser" Type="Self.EHSSUser" Multiplicity="0..1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EHSSUser">
+        <PropertyRef Name="EHSSUserID" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSDSDETA_REFERENCE_HAZARDTY">
+    <End Role="HazardType" Type="Self.HazardType" Multiplicity="0..1" />
+    <End Role="MSDSDetail" Type="Self.MSDSDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HazardType">
+        <PropertyRef Name="HazardTypeCode" />
+      </Principal>
+      <Dependent Role="MSDSDetail">
+        <PropertyRef Name="HazardTypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSDSDETA_REFERENCE_MSDSDATA">
+    <End Role="MSDSData" Type="Self.MSDSData" Multiplicity="1" />
+    <End Role="MSDSDetail" Type="Self.MSDSDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSDSData">
+        <PropertyRef Name="EHSSDataID" />
+      </Principal>
+      <Dependent Role="MSDSDetail">
+        <PropertyRef Name="EHSSDataID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HESSLocalDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EHSSData" EntityType="Self.EHSSData" />
+    <EntitySet Name="EHSSUser" EntityType="Self.EHSSUser" />
+    <EntitySet Name="HazardType" EntityType="Self.HazardType" />
+    <EntitySet Name="MSDSData" EntityType="Self.MSDSData" />
+    <EntitySet Name="MSDSDetail" EntityType="Self.MSDSDetail" />
+    <EntitySet Name="Shipment" EntityType="Self.Shipment" />
+    <AssociationSet Name="FK_EHSSDATA_REFERENCE_EHSSUSER1" Association="Self.FK_EHSSDATA_REFERENCE_EHSSUSER1">
+      <End Role="EHSSUser" EntitySet="EHSSUser" />
+      <End Role="EHSSData" EntitySet="EHSSData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EHSSDATA_REFERENCE_EHSSUSER2" Association="Self.FK_EHSSDATA_REFERENCE_EHSSUSER2">
+      <End Role="EHSSUser" EntitySet="EHSSUser" />
+      <End Role="EHSSData" EntitySet="EHSSData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EHSSDATA_REFERENCE_HAZARDTY" Association="Self.FK_EHSSDATA_REFERENCE_HAZARDTY">
+      <End Role="HazardType" EntitySet="HazardType" />
+      <End Role="EHSSData" EntitySet="EHSSData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSDSDATA_REFERENCE_EHSSDATA" Association="Self.FK_MSDSDATA_REFERENCE_EHSSDATA">
+      <End Role="EHSSData" EntitySet="EHSSData" />
+      <End Role="MSDSData" EntitySet="MSDSData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHIPMENT_REFERENCE_EHSSDATA" Association="Self.FK_SHIPMENT_REFERENCE_EHSSDATA">
+      <End Role="EHSSData" EntitySet="EHSSData" />
+      <End Role="Shipment" EntitySet="Shipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSDSDATA_REFERENCE_EHSSUSER" Association="Self.FK_MSDSDATA_REFERENCE_EHSSUSER">
+      <End Role="EHSSUser" EntitySet="EHSSUser" />
+      <End Role="MSDSData" EntitySet="MSDSData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHIPMENT_REFERENCE_EHSSUSER" Association="Self.FK_SHIPMENT_REFERENCE_EHSSUSER">
+      <End Role="EHSSUser" EntitySet="EHSSUser" />
+      <End Role="Shipment" EntitySet="Shipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSDSDETA_REFERENCE_HAZARDTY" Association="Self.FK_MSDSDETA_REFERENCE_HAZARDTY">
+      <End Role="HazardType" EntitySet="HazardType" />
+      <End Role="MSDSDetail" EntitySet="MSDSDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSDSDETA_REFERENCE_MSDSDATA" Association="Self.FK_MSDSDETA_REFERENCE_MSDSDATA">
+      <End Role="MSDSData" EntitySet="MSDSData" />
+      <End Role="MSDSDetail" EntitySet="MSDSDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

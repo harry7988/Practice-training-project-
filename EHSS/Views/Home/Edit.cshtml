@@ -1,0 +1,268 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>Edit EHSS</title>
+    <link href="~/Content/css/default.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+        function menuFix() {
+            var sfEls = document.getElementById("mainMenu").getElementsByTagName("li");
+            for (var i = 0; i < sfEls.length; i++) {
+                sfEls[i].onmouseover = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseDown = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseUp = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onmouseout = function () {
+                    this.className = this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+                        "");
+                }
+            }
+        }
+        window.onload = menuFix;
+//--><!]]></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div class="logo">
+            </div>
+            <div style="position: absolute; right: 10px; top: 40px; font-size: 16px; font-weight: bold;
+                color: #00468A">
+                Environmental Health Safety Security
+            </div>
+            <ul class="userInfo">
+                <li>Login Name: LaNiece Thomas </li>
+                <li>| </li>
+                <li><a href="#">Logout</a> </li>
+            </ul>
+            <ul id="mainMenu">
+                <li class="currently">
+                    <a href="#">EHSS</a>
+                    <ul>
+                        <li><a href="#">Create EHSS Data</a></li>
+                        <li><a href="#">Manage EHSS</a></li>
+                        <li><a href="#">Approve EHSS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MSDS</a>
+                    <ul>
+                        <li><a href="#">Create MSDS Data</a></li>
+                        <li><a href="#">Manage MSDS</a></li>
+                        <li><a href="#">Approve MSDS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Shipment</a>
+                    <ul>
+                        <li><a href="#">Create Shipment Data</a></li>
+                        <li><a href="#">Manage Shipments</a></li>
+                        <li><a href="#">Approve Shipments</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Hazard Type</a>
+                    <ul>
+                        <li><a href="#">Create Hazard Type</a></li>
+                        <li><a href="#">Manage Hazard Type</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Configuration</a>
+                    <ul>
+                        <li><a href="#">Change Login Name and Password</a></li>
+                        <li><a href="#">Create EHSS Users</a></li>
+                        <li><a href="#">Manage EHSS Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="sideContent">
+                <div class="info">
+                    <h3>
+                        Quick filters
+                    </h3>
+
+                    <p>
+                        EHSS Status:
+                        <select name="" style="width: 160px">
+                            <option>Draft</option>
+                            <option>Approved</option>
+                        </select>
+                    </p>
+                    <p>
+                        Product Name:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Product Code:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Physical State:
+                        <select name="" style="width: 160px">
+                            <option>solid</option>
+                            <option>liquid</option>
+                        </select>
+                    </p>
+                    <p>
+                        Hazard Type:
+                        <select name="" style="width: 160px">
+                            <option>corrosive</option>
+                            <option>explosive</option>
+                        </select>
+                    </p>
+                    <p>
+                        DOT Description:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        UN Number:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Expire in (days):
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <div class="linkBtn">
+                        <input name="" type="button" value="Filter" class="btnStyle_1" style="float:right" />
+                    </div>
+                    <p style="margin-top:30px"><h3>Advanced Search </h3></p>
+                </div>
+            </div>
+            <div class="mainContent">
+                <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                        <td width="47%">
+                            Product Code:
+                        </td>
+                        <td width="53%">
+                            <input type="text" name="textfield" style="width: 220px" value="P001" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Product Name:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield35" style="width: 220px" value="Aquadet 1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Physical State:
+                        </td>
+                        <td>
+                            <select name="select" style="width: 226px;">
+                                <option selected=selected>solid</option>
+                                <option>liquid</option>
+                                <option>powder</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hazard Type:
+                        </td>
+                        <td>
+                            <select name="select" style="width: 226px;">
+                                <option selected=selected>explosives</option>
+                                <option>compressed</option>
+                                <option>flammable</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            UN Number:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield36" style="width: 220px" value="2333" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Expiring In Days:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield3" style="width: 220px" value="20" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            DOT Description:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            EHSS Status:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="Draft" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Author:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="John Clinton" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Created Date:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="4/27/2014" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Auditor:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="Tony Gates" disabled="disabled" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Approved Date:
+                        </td>
+                        <td>
+                            <input type="text" name="textfield37" style="width: 220px" value="4/28/2014" disabled="disabled" />
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn2">
+                    <input name="Input2" type="button" class="btnStyle_2" value="Save" />
+                    <input name="Input2" type="button" class="btnStyle_2" value="Cancel" />
+                    <input name="Input2" type="button" class="btnStyle_2" value="Delete" />
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <img src="~/Content/images/bottom.gif" />
+        </div>
+    </div>
+
+</body>
+</html>
+

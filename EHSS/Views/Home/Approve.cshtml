@@ -1,0 +1,337 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>EHSS List-Approve</title>
+    <link href="~/Content/css/default.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+        function menuFix() {
+            var sfEls = document.getElementById("mainMenu").getElementsByTagName("li");
+            for (var i = 0; i < sfEls.length; i++) {
+                sfEls[i].onmouseover = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseDown = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseUp = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onmouseout = function () {
+                    this.className = this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+                        "");
+                }
+            }
+        }
+        window.onload = menuFix;
+//--><!]]></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div class="logo">
+            </div>
+            <div style="position: absolute; right: 10px; top: 40px; font-size: 16px; font-weight: bold;
+                color: #00468A">
+                Environmental Health Safety Security
+            </div>
+            <ul class="userInfo">
+                <li>Login Name: LaNiece Thomas </li>
+                <li>| </li>
+                <li><a href="#">Logout</a> </li>
+            </ul>
+            <ul id="mainMenu">
+                <li class="currently">
+                    <a href="#">EHSS</a>
+                    <ul>
+                        <li><a href="#">Create EHSS Data</a></li>
+                        <li><a href="#">Manage EHSS</a></li>
+                        <li><a href="#">Approve EHSS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MSDS</a>
+                    <ul>
+                        <li><a href="#">Create MSDS Data</a></li>
+                        <li><a href="#">Manage MSDS</a></li>
+                        <li><a href="#">Approve MSDS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Shipment</a>
+                    <ul>
+                        <li><a href="#">Create Shipment Data</a></li>
+                        <li><a href="#">Manage Shipments</a></li>
+                        <li><a href="#">Approve Shipments</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Hazard Type</a>
+                    <ul>
+                        <li><a href="#">Create Hazard Type</a></li>
+                        <li><a href="#">Manage Hazard Type</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Configuration</a>
+                    <ul>
+                        <li><a href="#">Change Login Name and Password</a></li>
+                        <li><a href="#">Create EHSS User</a></li>
+                        <li><a href="#">Manage EHSS Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="sideContent">
+                <div class="info">
+                    <h3>
+                        Quick filters
+                    </h3>
+
+                    <p>
+                        EHSS Status:
+                        <select name="" style="width: 160px">
+                            <option>Draft</option>
+                            <option>Approved</option>
+                        </select>
+                    </p>
+                    <p>
+                        Product Name:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Product Code:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Physical State:
+                        <select name="" style="width: 160px">
+                            <option>solid</option>
+                            <option>liquid</option>
+                        </select>
+                    </p>
+                    <p>
+                        Hazard Type:
+                        <select name="" style="width: 160px">
+                            <option>corrosive</option>
+                            <option>explosive</option>
+                        </select>
+                    </p>
+                    <p>
+                        DOT Description:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        UN Number:
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <p>
+                        Expire in (days):
+                        <input name="" type="text" style="width: 155px" />
+                    </p>
+                    <div class="linkBtn">
+                        <input name="" type="button" value="Filter" class="btnStyle_1" style="float:right" />
+                    </div>
+                    <p style="margin-top:30px"><h3>Advanced Search </h3></p>
+                </div>
+            </div>
+            <div class="mainContent">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="homepageList">
+                    <tr>
+                        <th width="20%" scope="col">
+                            <label><input type="checkbox" />Select All</label>
+                        </th>
+                        <th width="20%" scope="col">
+                            Product Name
+                        </th>
+                        <th width="18%" scope="col">
+                            Product Code
+                        </th>
+                        <th width="23%" scope="col">
+                            Hazard Type
+                        </th>
+                        <th scope="col" width="9%">&nbsp;                        </th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>
+                            <a href="#">Aquadet 1</a>
+                        </td>
+                        <td>
+                            Normal
+                        </td>
+                        <td>
+                            corrosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex1</a>
+                        </td>
+                        <td>
+                            Sample
+                        </td>
+                        <td>
+                            corrosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Aquadet 2</a>
+                        </td>
+                        <td>Lab</td>
+                        <td>
+                            corrosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Aquadet 3</a>
+                        </td>
+                        <td>
+                            Normal
+                        </td>
+                        <td>
+                            corrosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex2</a>
+                        </td>
+                        <td>
+                            Normal
+                        </td>
+                        <td>
+                            corrosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Aquadet 1</a>
+                        </td>
+                        <td>Lab</td>
+                        <td>explosive </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex3</a>
+                        </td>
+                        <td>Normal  </td>
+                        <td>explosive </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Aquadet 2</a>
+                        </td>
+                        <td>Sample</td>
+                        <td>
+                            explosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Aquadet 3</a>
+                        </td>
+                        <td>Sample</td>
+                        <td>corrosive</td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex</a>
+                        </td>
+                        <td>Normal</td>
+                        <td>
+                            explosive
+                        </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex</a>
+                        </td>
+                        <td> Lab </td>
+                        <td>explosive</td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex</a>
+                        </td>
+                        <td> Lab </td>
+                        <td>explosive</td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" />                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" /></td>
+
+                        <td>
+                            <a href="#">Vortex</a>
+                        </td>
+                        <td> Lab </td>
+                        <td>explosive </td>
+                        <td><img src="~/Content/images/approve.gif" width="16" height="16" /></td>
+
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="btn">
+                    <tr>
+                        <td width="16%">
+                            <input name="" type="button" class="btnStyle_2" value="Approve" />
+                        </td>
+                        <td width="84%">
+                            << < 1 | 2 | 3 | 4 | 5 > >>
+                            <input name="" type="text" style="width: 40px" />
+                            <input name="" type="button" value="Go" class="btnStyle_2" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="copyright">
+            <img src="~/Content/images/bottom.gif" />
+        </div>
+    </div>
+</body>
+</html>
+

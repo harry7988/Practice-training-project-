@@ -1,0 +1,123 @@
+﻿@model EHSS.ViewModel.EHSSDataManageListViewModel
+@{
+    ViewBag.Title = "Creat";
+    Layout = "~/Views/Shared/_EHSSbase.cshtml";
+}
+
+<div id="content">
+    <div class="sideContent">
+        @using (Html.BeginForm("index", "ManageEHSSData", FormMethod.Post))
+        {
+            <div class="info">
+                <h3>
+                    Quick filters
+                </h3>
+
+                <p>
+                    EHSS Status:
+                    @Html.DropDownList("EHSSStatus", Model.Status, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    Product Name:
+                    <input name="ProductName" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Product Code:
+                    <input name="ProductCode" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Physical State:
+                    @Html.DropDownList("PhysicalState", Model.PhysicalState, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    Hazard Type:
+                    @Html.DropDownList("HazardType", Model.HazardType, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    DOT Description:
+                    <input name="DOTDescription" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    UN Number:
+                    <input name="UNNumber" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Expire in (days):
+                    <input name="Expirein" type="text" style="width: 155px" />
+                </p>
+                <div class="linkBtn">
+                    <input name="" type="submit" value="Filter" class="btnStyle_1" style="float:right" />
+                </div>
+                <p style="margin-top:30px"><h3>Advanced Search </h3></p>
+            </div>
+        }
+    </div>
+    @using (Html.BeginForm("DoCreat", "ManageEHSSData",FormMethod.Post))
+    {
+        <div class="mainContent">
+            <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <tr>
+                    <td width="47%">
+                        Product Code:
+                    </td>
+                    <td width="53%">
+                        <input type="text" name="ProductCode" style="width: 220px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Product Name:
+                    </td>
+                    <td>
+                        <input type="text" name="ProductName" style="width: 220px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Physical State:
+                    </td>
+                    <td>
+                        @Html.DropDownList("PhysicalState", Model.PhysicalState, null, new { style = "width: 226px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Hazard Type:
+                    </td>
+                    <td>
+                        @Html.DropDownList("HazardTypeCode", Model.HazardType, null, new { style = "width: 226px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        UN Number:
+                    </td>
+                    <td>
+                        <input type="text" name="UNNumber" style="width: 220px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Expiring In Days:
+                    </td>
+                    <td>
+                        <input type="text" name="ExpiringInDays" style="width: 220px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        DOT Description:
+                    </td>
+                    <td>
+                        <input type="text" name="DOTDescription" style="width: 220px" />
+                    </td>
+                </tr>
+            </table>
+            <div class="btn2">
+                <input name="Input2" type="submit" class="btnStyle_2" value="Save" />
+                <input name="Input2" type="button" class="btnStyle_2" value="Cancel" />
+            </div>
+        </div>
+    }
+</div>
+

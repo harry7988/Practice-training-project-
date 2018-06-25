@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>EHSS List-Manage</title>
+    <link href="~/Content/css/default.css" rel="stylesheet" />
+    <script type="text/javascript">
+<!--    //--><![CDATA[//><!--
+        function menuFix() {
+            var sfEls = document.getElementById("mainMenu").getElementsByTagName("li");
+            for (var i = 0; i < sfEls.length; i++) {
+                sfEls[i].onmouseover = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseDown = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onMouseUp = function () {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                sfEls[i].onmouseout = function () {
+                    this.className = this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+                        "");
+                }
+            }
+        }
+        window.onload = menuFix;
+//--><!]]></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div class="logo">
+            </div>
+            <div style="position: absolute; right: 10px; top: 40px; font-size: 16px; font-weight: bold;
+                color: #00468A">
+                Environmental Health Safety Security
+            </div>
+            <ul class="userInfo">
+                <li>Login Name: @User.Identity.Name </li>
+                <li>| </li>
+                <li>
+                    @if (User.Identity.Name!="")
+                    {
+                        @*<a href="#">Logout</a>*@
+                        @Html.ActionLink("Logout", "Logout", "User")
+                    }
+                </li>
+            </ul>
+            <ul id="mainMenu">
+                <li class="currently">
+                    <a href="#">EHSS</a>
+                    <ul>
+                        <li>@Html.ActionLink("Create EHSS Data", "Creat", "ManageEHSSData")</li>
+                        <li>@Html.ActionLink("Manage EHSS", "index", "ManageEHSSData")</li>
+                        <li><a href="#">Approve EHSS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MSDS</a>
+                    <ul>
+                        <li><a href="#">Create MSDS Data</a></li>
+                        <li><a href="#">Manage MSDS</a></li>
+                        <li><a href="#">Approve MSDS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Shipment</a>
+                    <ul>
+                        <li><a href="#">Create Shipment Data</a></li>
+                        <li><a href="#">Manage Shipments</a></li>
+                        <li><a href="#">Approve Shipments</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Hazard Type</a>
+                    <ul>
+                        <li><a href="#">Create Hazard Type</a></li>
+                        <li><a href="#">Manage Hazard Type</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Configuration</a>
+                    <ul>
+                        <li><a href="#">Change Login Name and Password</a></li>
+                        <li><a href="#">Create EHSS User</a></li>
+                        <li><a href="#">Manage EHSS Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @RenderBody()
+        <div id="copyright">
+            <img src="~/Content/images/bottom.gif" />
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

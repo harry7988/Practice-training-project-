@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ce17d86b3ee4dab870e62bd97e8f184" Name="Diagram1">
+        <EntityTypeShape EntityType="HESSLocalDBModel.EHSSData" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HESSLocalDBModel.EHSSUser" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HESSLocalDBModel.HazardType" Width="2" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HESSLocalDBModel.MSDSData" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HESSLocalDBModel.MSDSDetail" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HESSLocalDBModel.Shipment" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_EHSSDATA_REFERENCE_EHSSUSER1" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_EHSSDATA_REFERENCE_EHSSUSER2" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_EHSSDATA_REFERENCE_HAZARDTY" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_MSDSDATA_REFERENCE_EHSSDATA" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_SHIPMENT_REFERENCE_EHSSDATA" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_MSDSDATA_REFERENCE_EHSSUSER" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_SHIPMENT_REFERENCE_EHSSUSER" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_MSDSDETA_REFERENCE_HAZARDTY" ManuallyRouted="false" />
+        <AssociationConnector Association="HESSLocalDBModel.FK_MSDSDETA_REFERENCE_MSDSDATA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

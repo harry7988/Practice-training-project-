@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HESSLocalDBModelStoreContainer" CdmEntityContainer="HESSLocalDBEntities">
+    <EntitySetMapping Name="EHSSData">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.EHSSData">
+        <MappingFragment StoreEntitySet="EHSSData">
+          <ScalarProperty Name="EHSSDataID" ColumnName="EHSSDataID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="PhysicalState" ColumnName="PhysicalState" />
+          <ScalarProperty Name="HazardTypeCode" ColumnName="HazardTypeCode" />
+          <ScalarProperty Name="UNNumber" ColumnName="UNNumber" />
+          <ScalarProperty Name="ExpiringInDays" ColumnName="ExpiringInDays" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="EHSSStatus" ColumnName="EHSSStatus" />
+          <ScalarProperty Name="AuditorID" ColumnName="AuditorID" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="DOTDescription" ColumnName="DOTDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EHSSUser">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.EHSSUser">
+        <MappingFragment StoreEntitySet="EHSSUser">
+          <ScalarProperty Name="EHSSUserID" ColumnName="EHSSUserID" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HazardType">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.HazardType">
+        <MappingFragment StoreEntitySet="HazardType">
+          <ScalarProperty Name="HazardTypeCode" ColumnName="HazardTypeCode" />
+          <ScalarProperty Name="HazardTypeDesc" ColumnName="HazardTypeDesc" />
+          <ScalarProperty Name="HazardSignImage" ColumnName="HazardSignImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSDSData">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.MSDSData">
+        <MappingFragment StoreEntitySet="MSDSData">
+          <ScalarProperty Name="EHSSDataID" ColumnName="EHSSDataID" />
+          <ScalarProperty Name="EmergencyTelephone" ColumnName="EmergencyTelephone" />
+          <ScalarProperty Name="HazardStatement" ColumnName="HazardStatement" />
+          <ScalarProperty Name="FireStatement" ColumnName="FireStatement" />
+          <ScalarProperty Name="Emergency" ColumnName="Emergency" />
+          <ScalarProperty Name="StorageDisposal" ColumnName="StorageDisposal" />
+          <ScalarProperty Name="SpillLeak" ColumnName="SpillLeak" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AuditorID" ColumnName="AuditorID" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="MSDSStatus" ColumnName="MSDSStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSDSDetail">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.MSDSDetail">
+        <MappingFragment StoreEntitySet="MSDSDetail">
+          <ScalarProperty Name="Ingredient" ColumnName="Ingredient" />
+          <ScalarProperty Name="EHSSDataID" ColumnName="EHSSDataID" />
+          <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+          <ScalarProperty Name="HazardTypeCode" ColumnName="HazardTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipment">
+      <EntityTypeMapping TypeName="HESSLocalDBModel.Shipment">
+        <MappingFragment StoreEntitySet="Shipment">
+          <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+          <ScalarProperty Name="EHSSDataID" ColumnName="EHSSDataID" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="DateInProduced" ColumnName="DateInProduced" />
+          <ScalarProperty Name="DateToPull" ColumnName="DateToPull" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="AddressFrom" ColumnName="AddressFrom" />
+          <ScalarProperty Name="ShipperTel" ColumnName="ShipperTel" />
+          <ScalarProperty Name="AddressTo" ColumnName="AddressTo" />
+          <ScalarProperty Name="ConsigneeTel" ColumnName="ConsigneeTel" />
+          <ScalarProperty Name="ShippingType" ColumnName="ShippingType" />
+          <ScalarProperty Name="ContainerSize" ColumnName="ContainerSize" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="FreightCharge" ColumnName="FreightCharge" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="AuditorID" ColumnName="AuditorID" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="ShipmentStatus" ColumnName="ShipmentStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,107 @@
+﻿@model EHSS.ViewModel.EHSSDataManageListViewModel
+
+@{
+    Layout = "~/Views/Shared/_EHSSbase.cshtml";
+    
+
+}
+
+
+<div id="content">
+    <div class="sideContent">
+        @using (Html.BeginForm("index", "ManageEHSSData", FormMethod.Post))
+        {
+        <div class="info">
+            <h3>
+                Quick filters
+            </h3>
+
+            <p>
+                EHSS Status:
+                @Html.DropDownList("EHSSStatus",Model.Status,null,new { style= "width: 160px" })
+            </p>
+            <p>
+                Product Name:
+                <input name="ProductName" type="text" style="width: 155px" />
+            </p>
+            <p>
+                Product Code:
+                <input name="ProductCode" type="text" style="width: 155px" />
+            </p>
+            <p>
+                Physical State:
+                @Html.DropDownList("PhysicalState",Model.PhysicalState,null,new { style= "width: 160px" })
+            </p>
+            <p>
+                Hazard Type:
+                @Html.DropDownList("HazardType",Model.HazardType,null,new { style= "width: 160px" })
+            </p>
+            <p>
+                DOT Description:
+                <input name="DOTDescription" type="text" style="width: 155px" />
+            </p>
+            <p>
+                UN Number:
+                <input name="UNNumber" type="text" style="width: 155px" />
+            </p>
+            <p>
+                Expire in (days):
+                <input name="Expirein" type="text" style="width: 155px" />
+            </p>
+            <div class="linkBtn">
+                <input name="" type="submit" value="Filter" class="btnStyle_1" style="float:right" />
+            </div>
+            <p style="margin-top:30px"><h3>Advanced Search </h3></p>
+        </div>
+}
+    </div>
+    <div class="mainContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="homepageList">
+            <tr>
+                <th width="30%" scope="col">
+                    Product Name
+                </th>
+                <th width="28%" scope="col">
+                    Product Code
+                </th>
+                <th width="33%" scope="col">
+                    Hazard Type
+                </th>
+                <th scope="col" width="9%">&nbsp;                        </th>
+            </tr>
+
+
+
+    @foreach (var item in Model.EHSSDatas)
+    {
+            <tr>
+                <td>
+                    <a href="#">@item.ProductName</a>
+                </td>
+                <td>
+                    @item.ProductCode
+                </td>
+                <td>
+                    @item.HazardType.HazardTypeCode
+                </td>
+                <td><img src="~/Content/images/edit.gif" width="16" height="16" />                        </td>
+            </tr>
+     }
+
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="btn">
+            <tr>
+                <td width="16%">
+                    @Html.ActionLink("New EHSS", "Creat", "ManageEHSSData",new { @class="btnStyle_2"})
+                </td>
+                <td width="84%">
+                    << < 1 | 2 | 3 | 4 | 5 > >>
+                    <input name="" type="text" style="width: 40px" />
+                    <input name="" type="button" value="Go" class="btnStyle_2" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

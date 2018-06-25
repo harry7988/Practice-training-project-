@@ -1,0 +1,367 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background:#5785A9;
+	margin:0;
+}
+*{font-family: Arial, Helvetica, sans-serif;font-size:12px; }
+a
+{
+	color:#3B82EA;
+	text-decoration:none;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+.btnStyle_1
+{
+	border:1px solid #8BB7E1;
+	background:url(../images/btn_bg.gif) repeat-x;
+	padding:1px 0px 3px 0px !important;
+	padding:2px 0px 3px 0px;
+	color:#FFFFFF;
+	font-weight:bold;
+	font-size:11px;
+}
+.btnStyle_2
+{
+	border:1px solid #AFAFAF;
+	background:url(../images/btn_bg2.gif) repeat-x;
+	padding:0px 5px 2px 5px !important;
+	padding:1px 5px 2px 5px;
+	color:#FFFFFF;
+	font-weight:bold;
+	font-size:11px;
+}
+.wrapper
+{
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	background:#FFF;
+
+}
+p
+{
+	margin:0;
+	margin-top:5px;
+}
+ul,li
+{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+/*----------------------------------------------------*/
+#header
+{
+	background:url(../images/top_bg.gif) repeat-x top #E3E3E3;
+	height:144px;
+	position:relative;
+}
+#header .logo
+{
+	background:url(../images/logo.gif) no-repeat;
+	width:305px;
+	height:100px;
+	
+}
+#header .userInfo
+{
+	position:absolute;
+	right:10px;
+	top:75px;
+	font-size:11px;
+	font-weight:bold;
+}
+#header .userInfo li
+{
+	display:inline;
+}
+
+#header #mainMenu {
+    height: 44px;  
+    list-style-type: none;  
+	line-height:24px;
+	position:absolute;
+	background:url(../images/mainMenu_bg.gif) repeat-x;
+	width:776px;
+	margin-left:2px;
+	top:100px;
+}
+#header #mainMenu a {
+	display: block; 
+	text-align:left;	
+	padding-left:30px;
+	padding-right:30px;
+	color:#FFF;
+}
+#header #mainMenu a:link  {
+	color:#FFF; 
+	text-decoration:none;
+}
+#header #mainMenu a:visited  {
+	color:#FFF;
+	text-decoration:none;
+}
+#header #mainMenu a:hover  {
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	background:url(../images/mainMenu_bg_hover.gif) repeat-x;
+}
+#header #mainMenu li {
+   
+	background:url(../images/mainMenu_bg.gif) repeat-x;
+	float:left;
+	line-height:44px;
+	border-right:1px solid #FFF;
+	font-weight:bold;
+}
+#header #mainMenu li.currently
+{
+	background:url(../images/mainMenu_bg_hover.gif) repeat-x;
+}
+#header #mainMenu li ul {
+	line-height: 24px;  
+	list-style-type: none;
+	text-align:left;
+	left: -9999px; 
+	position: absolute;
+	background:#A3A3A3;
+	width:776px;
+}
+#header #mainMenu li ul li{
+	background:#A3A3A3;
+	display:inline;
+	line-height:14px;
+	font-weight:normal;
+	padding-top:3px;
+	padding-bottom:3px;
+	border:0;
+
+}
+#header #mainMenu li ul a{
+	display: block; 
+	text-align:left;
+	padding-left:15px;
+	padding-right:15px;
+	border-right:1px  solid #FFF;
+}
+#header #mainMenu li ul a:link  {
+	color:#FFF; text-decoration:none;
+}
+#header #mainMenu li ul a:visited  {
+	color:#FFF;text-decoration:none;
+}
+#header #mainMenu li ul a:hover  {
+	color:#FFF;
+	text-decoration:none;
+	font-weight:normal;
+	background:#A3A3A3;
+	font-weight:bold;
+}
+#header #mainMenu li ul li:hover
+{
+	 left:0;
+}
+#header #mainMenu li.sfhover ul {
+	 left:0;
+}
+
+/*----------------------------------------------------*/
+#content
+{
+	padding-bottom:20px;
+	padding-top:22px;
+	padding-left:10px;
+	padding-right:10px;
+	background:url(../images/content_bg.gif) repeat-x;
+}
+#content .mainContent
+{
+	float:left;
+	margin-left:10px;
+	width:567px !important;
+	width:570px ;
+}
+#content .homepageList td
+{
+	border-bottom:1px dotted #CCC;
+}
+#content .homepageList td,#content .homepageList th
+{
+	padding:0px 5px 0px 5px;
+	line-height:27px;
+	text-align:left;
+}
+#content .homepageList th
+{
+	background:url(../images/th_bg1.gif) repeat-x;
+	border-top:1px solid #CDCDCD;
+	border-bottom:2px solid #CDCDCD;
+}
+#content  .sideContent
+{
+	width:180px;
+	float:left;
+}
+#content  .info
+{
+	background:url(../images/secondContent_bg.gif) bottom repeat-x;
+	padding:5px;
+	border:1px solid #CDCDCD;
+	min-height:400px;
+	_height:400px;
+}
+#content  .sideContent .bottomBtn .btnStyle_1
+{
+	width:180px;
+	margin-top:3px;
+		
+}
+#content  .sideContent .linkBtn 
+{
+	margin-top:15px;
+	font-weight:bold;
+	color:#3B82EA;
+	padding-bottom:5px;
+}
+#content  .sideContent .linkBtn  .btnStyle_1
+{
+	width:100px;
+}
+#content  .sideContent .linkBtn a
+{
+	text-decoration:underline;
+}
+#content  .sideContent p
+{
+	margin-top:8px;
+	margin-bottom:8px;
+}
+#content  .sideContent .title
+{
+	background:#DEDEDE;
+	padding:2px 5px 2px 5px;
+	margin-bottom:5px;
+	font-weight:bold;
+}
+#content .sideContent h3
+{
+	font-size:14px;
+	margin:0;
+	margin-bottom:10px;
+	background:#99CC33;
+	color:#FFFFFF;
+	text-align:center;
+	padding:3px 0 3px 0;
+}
+#content  .sideContent .sideNav li
+{
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:2px 0px 2px 12px;
+	background:url(../images/arrow1.gif) no-repeat 2px 6px;
+	font-weight:bold
+}
+#content  .sideContent .sideNav li.current
+{
+	background:url(../images/arrow1.gif) no-repeat 2px 6px #E6E6E6;
+}
+#content .filter
+{
+	margin-bottom:10px;
+	margin-left:10px;
+	margin-right:10px;
+}
+#content .sectionList
+{
+	margin-left:10px;
+	margin-right:10px;
+
+}
+#content .sectionTitle
+{
+	background:#ECECEC;
+	font-weight:bold;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:5px;
+	margin-top:5px;
+}
+#content .currentSection
+{
+	background:#DAEDFF;
+	font-weight:bold;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:5px;
+	margin-top:5px;
+}
+#content  .sectionContent
+{
+	margin-top:10px;
+}
+#content  .sectionContent td
+{
+	padding:3px 0px 3px 5px;
+}
+#content .btn
+{
+	text-align:right;
+	margin-right:10px;
+	margin-top:15px;
+}
+#content .btn img, #content .btn2 img
+{
+	vertical-align:bottom;
+}
+#content .btn2 .btnStyle_2
+{
+	width:65px;
+}
+
+#content .btn2
+{
+	margin-right:72px;
+	text-align:right;
+	margin-top:15px;
+}
+/*-----------------------login-----------------------*/
+.login #header
+{
+	height:100px;
+}
+.login #content
+{
+	background:url(../images/login_top.gif) no-repeat top;
+	padding-top:120px;
+	padding-bottom:150px;
+	
+}
+.login .loginForm
+{
+	width:430px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.login .loginForm th
+{
+ 	text-align:right;
+}
+ .login .loginForm th, .login .loginForm td
+{
+	padding:8px;
+}
+.login .loginForm .btnStyle_1
+{
+	width:90px;
+}
+#copyright
+{
+	clear:both;
+}
