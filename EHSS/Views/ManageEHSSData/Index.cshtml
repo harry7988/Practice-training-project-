@@ -15,10 +15,9 @@
             <h3>
                 Quick filters
             </h3>
-
             <p>
                 EHSS Status:
-                @Html.DropDownList("EHSSStatus",Model.Status,null,new { style= "width: 160px" })
+                @Html.DropDownList("EHSSStatus", Model.Status, null, new { style = "width: 160px" })
             </p>
             <p>
                 Product Name:
@@ -30,11 +29,11 @@
             </p>
             <p>
                 Physical State:
-                @Html.DropDownList("PhysicalState",Model.PhysicalState,null,new { style= "width: 160px" })
+                @Html.DropDownList("PhysicalState", Model.PhysicalState, null, new { style = "width: 160px" })
             </p>
             <p>
                 Hazard Type:
-                @Html.DropDownList("HazardType",Model.HazardType,null,new { style= "width: 160px" })
+                @Html.DropDownList("HazardType", Model.HazardType, null, new { style = "width: 160px" })
             </p>
             <p>
                 DOT Description:
@@ -84,7 +83,11 @@
                 <td>
                     @item.HazardType.HazardTypeCode
                 </td>
-                <td><img src="~/Content/images/edit.gif" width="16" height="16" />                        </td>
+                <td>
+                    <a href="@Url.Action("Edit","ManageEHSSData",new { EHSSDataID=item.EHSSDataID})">
+                        <img src="~/Content/images/edit.gif" width="16" height="16" />
+                    </a>
+                </td>
             </tr>
      }
 

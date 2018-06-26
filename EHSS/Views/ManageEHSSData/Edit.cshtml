@@ -1,0 +1,171 @@
+﻿@model EHSS.ViewModel.EHSSDataEditViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_EHSSbase.cshtml";
+}
+
+<div id="content">
+    @using (Html.BeginForm("Index", "ManageEHSSData", FormMethod.Post))
+    {
+        <div class="sideContent">
+            <div class="info">
+                <h3>
+                    Quick filters
+                </h3>
+                <p>
+                    EHSS Status:
+                    @Html.DropDownList("EHSSStatus", Model.Status, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    Product Name:
+                    <input name="ProductName" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Product Code:
+                    <input name="ProductCode" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Physical State:
+                    @Html.DropDownList("PhysicalState", Model.PhysicalState, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    Hazard Type:
+                    @Html.DropDownList("HazardType", Model.HazardType, null, new { style = "width: 160px" })
+                </p>
+                <p>
+                    DOT Description:
+                    <input name="DOTDescription" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    UN Number:
+                    <input name="UNNumber" type="text" style="width: 155px" />
+                </p>
+                <p>
+                    Expire in (days):
+                    <input name="Expirein" type="text" style="width: 155px" />
+                </p>
+                <div class="linkBtn">
+                    <input name="" type="submit" value="Filter" class="btnStyle_1" style="float:right" />
+                </div>
+                <p style="margin-top:30px"><h3>Advanced Search </h3></p>
+            </div>
+        </div>
+    }
+    <div class="mainContent">
+        @using (Html.BeginForm("DoEdit", "ManageEHSSData", FormMethod.Post))
+        {
+            <div>
+                @Html.HiddenFor(p=>p.EHSSDataItem.EHSSDataID)
+                <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                        
+                        <td width="47%">
+                            Product Code:
+                        </td>
+                        <td width="53%">
+                            @Html.TextBoxFor(p => p.EHSSDataItem.ProductCode, new { @style = "width: 220px" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Product Name:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p => p.EHSSDataItem.ProductName, new { @style = "width: 220px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Physical State:
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(a => a.PhysicalState, Model.PhysicalState, null, new { style = "width: 160px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hazard Type:
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(a => a.HazardType, Model.HazardType, null, new { style = "width: 160px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            UN Number:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(u=>u.EHSSDataItem.UNNumber,new { @style = "width: 220px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Expiring In Days:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(e=>e.EHSSDataItem.ExpiringInDays,new { @style = "width: 220px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            DOT Description:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(d=>d.EHSSDataItem.DOTDescription,new { @style = "width: 220px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            EHSS Status:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p=>p.EHSSDataItem.EHSSStatus,new { @style = "width: 220px", @disabled = "disabled" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Author:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p => p.EHSSDataItem.AuthorID, new { @style = "width: 220px", @disabled = "disabled" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Created Date:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p => p.EHSSDataItem.CreateDate, new { @style = "width: 220px", @disabled = "disabled" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Auditor:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p => p.EHSSDataItem.AuditorID, new { @style = "width: 220px", @disabled = "disabled" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Approved Date:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(p => p.EHSSDataItem.ApproveDate, new { @style = "width: 220px", @disabled = "disabled" })
+
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn2">
+                    <input name="Input2" type="submit" class="btnStyle_2" value="Save" />
+                    <input name="Input2" type="button" class="btnStyle_2" value="Cancel" />
+                    <input name="Input2" type="button" class="btnStyle_2" value="Delete" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

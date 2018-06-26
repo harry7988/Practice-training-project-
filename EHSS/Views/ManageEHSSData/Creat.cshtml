@@ -115,7 +115,7 @@
             </table>
             <div class="btn2">
                 <input name="Input2" type="submit" class="btnStyle_2" value="Save" />
-                <input name="Input2" type="button" class="btnStyle_2" value="Cancel" />
+                @Html.ActionLink("Cancel", "index", "ManageEHSSData",null,new { @class="btnStyle_2"})
             </div>
         </div>
     }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using EHSS.Models;
 using EHSS.ViewModel;
 using System.Data.Entity.SqlServer;
+using System.Data.Entity;
 
 namespace EHSS.Controllers
 {
@@ -141,6 +142,59 @@ namespace EHSS.Controllers
             }
         }
 
+        public ActionResult Edit(string EHSSDataID)
+        {
+            var obj = from a in db.EHSSData
+                      where a.EHSSDataID == EHSSDataID
+                      select a;
+
+            EHSSDataEditViewModel eHSSDataEditViewModel = new EHSSDataEditViewModel();
+            eHSSDataEditViewModel.EHSSDataItem = obj.FirstOrDefault();
+            eHSSDataEditViewModel.HazardType = new List<SelectListItem>();
+            eHSSDataEditViewModel.HazardType = new List<SelectListItem>();
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "explosives", Value = "explosives" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "compressed", Value = "compressed" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "flammable", Value = "flammable" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "oxidizing", Value = "oxidizing" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "poisons", Value = "poisons" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "radioactive", Value = "radioactive" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "corrosives", Value = "corrosives" });
+            eHSSDataEditViewModel.HazardType.Add(new SelectListItem { Text = "miscellaneous", Value = "miscellaneous" });
+            eHSSDataEditViewModel.PhysicalState = new List<SelectListItem>();
+            eHSSDataEditViewModel.PhysicalState.Add(new SelectListItem { Text = "Solid", Value = "Solid" });
+            eHSSDataEditViewModel.PhysicalState.Add(new SelectListItem { Text = "Liquid", Value = "Liquid" });
+            eHSSDataEditViewModel.PhysicalState.Add(new SelectListItem { Text = "Powder", Value = "Powder" });
+            eHSSDataEditViewModel.Status = new List<SelectListItem>();
+            eHSSDataEditViewModel.Status.Add(new SelectListItem { Text = "Approved", Value = "Approved" });
+            eHSSDataEditViewModel.Status.Add(new SelectListItem { Text = "Draft", Value = "Draft" });
+            return View(eHSSDataEditViewModel);
+        }
+        
+        //以下方法有问题暂未实现
+        [HttpPost]
+        public ActionResult DoEdit(EHSSDataEditViewModel data)
+        {
+            if (ModelState.IsValid)
+            {
+                EHSSData EHSSDataitem = db.EHSSData.Find(data.EHSSDataItem.EHSSDataID);
+                EHSSDataitem.ApproveDate = data.EHSSDataItem.ApproveDate;
+                EHSSDataitem.AuditorID = data.EHSSDataItem.AuditorID;
+                EHSSDataitem.AuthorID = data.EHSSDataItem.AuthorID;
+                EHSSDataitem.CreateDate = data.EHSSDataItem.CreateDate;
+                EHSSDataitem.DOTDescription = data.EHSSDataItem.DOTDescription;
+                EHSSDataitem.EHSSStatus = data.EHSSDataItem.EHSSStatus;
+                EHSSDataitem.ExpiringInDays = data.EHSSDataItem.ExpiringInDays;
+                EHSSDataitem.HazardTypeCode = data.EHSSDataItem.HazardTypeCode;
+                EHSSDataitem.PhysicalState = data.EHSSDataItem.PhysicalState;
+                EHSSDataitem.ProductCode = data.EHSSDataItem.ProductCode;
+                EHSSDataitem.ProductName = data.EHSSDataItem.ProductName;
+                EHSSDataitem.UNNumber = data.EHSSDataItem.UNNumber;
+                db.SaveChanges();
+                return View("index");
+            }
+            ModelState.AddModelError("e1", "修改失败");
+            return View();
+        }
         
     }
 }
