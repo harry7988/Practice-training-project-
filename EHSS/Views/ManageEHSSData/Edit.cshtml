@@ -80,7 +80,7 @@
                             Physical State:
                         </td>
                         <td>
-                            @Html.DropDownListFor(a => a.PhysicalState, Model.PhysicalState, null, new { style = "width: 160px" })
+                            @Html.DropDownListFor(a => a.EHSSDataItem.PhysicalState,Model.PhysicalState,new { style = "width: 160px" })
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +88,7 @@
                             Hazard Type:
                         </td>
                         <td>
-                            @Html.DropDownListFor(a => a.HazardType, Model.HazardType, null, new { style = "width: 160px" })
+                            @Html.DropDownListFor(a => a.EHSSDataItem.HazardTypeCode,Model.HazardType , null, new { style = "width: 160px" })
                         </td>
                     </tr>
                     <tr>

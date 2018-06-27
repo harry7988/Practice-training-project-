@@ -45,7 +45,7 @@ namespace EHSS.Controllers
                 if (ul>0)
                 {
                     FormsAuthentication.SetAuthCookie(user.LoginName, false);
-                    return RedirectToAction("index", "Home");
+                    return RedirectToAction("index", "ManageEHSSData");
                 }
                 else
                 {

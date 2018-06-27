@@ -13,8 +13,8 @@ namespace EHSS.Controllers
         HESSLocalDBEntities db = new HESSLocalDBEntities();
         public ActionResult Index()
         {
-            Response.Write(User.Identity.Name);
-            return View();
+            
+            return RedirectToAction("index", "ManageEHSSData");
         }
 
         public ActionResult Approve()

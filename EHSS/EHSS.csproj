@@ -290,6 +290,7 @@
     <Content Include="Views\Shared\_EHSSbase.cshtml" />
     <Content Include="Views\ManageEHSSData\Creat.cshtml" />
     <Content Include="Views\ManageEHSSData\Edit.cshtml" />
+    <Content Include="Views\ManageEHSSData\Approve.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\CreateandPrintLabels\" />
